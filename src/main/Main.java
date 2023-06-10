@@ -1,12 +1,13 @@
 package main;
-import adapterPOO.*;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Prestobarba pm = new PrestobarbaManual();
-		PrestobarbaElectrico pe = new PrestobarbaElectrico();
-		Prestobarba adppe = new AdaptadorPrestElect(pe);
+		
+		//Adapter POO
+		adapterPOO.Prestobarba pm = new adapterPOO.PrestobarbaManual();
+		adapterPOO.PrestobarbaElectrico pe = new adapterPOO.PrestobarbaElectrico();
+		adapterPOO.Prestobarba adppe = new adapterPOO.AdaptadorPrestElect(pe);
 		
 		System.out.println("Prestobarba Manual");
 		pm.rasurar();
@@ -17,6 +18,14 @@ public class Main {
 		System.out.println("Prestobarba Electrico");
 		adppe.rasurar();
 		adppe.mantenimiento();
+		
+		
+		//Adapter AOP
+		adapterAOP.Prestobarba p = new adapterAOP.AdaptadorPrestElect();
+		
+		p.rasurar();
+		
+		p.mantenimiento();
 	}
 
 }
