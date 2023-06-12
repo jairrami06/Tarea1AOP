@@ -1,11 +1,13 @@
 package main;
+import SingletonAOP.RegistradoraAOP;
+import SingletonAOP.SingletonAOP;
 import SingletonPOO.*;
 public class Main {
 
 	public static void main(String[] args) {
 		
-		Registradora regis= SingletonPOO.Registradora.getInstance();
-		regis.registrar();
+		
+		
 		//Adapter POO
 		adapterPOO.Prestobarba pm = new adapterPOO.PrestobarbaManual();
 		adapterPOO.PrestobarbaElectrico pe = new adapterPOO.PrestobarbaElectrico();
@@ -23,6 +25,22 @@ public class Main {
 		
 		
 		//Adapter AOP
+		
+		
+		
+		
+		//Singleton POO
+		Registradora regis= SingletonPOO.Registradora.getInstance();
+		regis.registrar();
+		
+		
+		//Singleton AOP
+		RegistradoraAOP regisAOP= RegistradoraAOP.getInstance();
+		regisAOP.registrar();
+		
+		
+		
+		
 		adapterAOP.Prestobarba p = new adapterAOP.AdaptadorPrestElect();
 		
 		p.rasurar();
